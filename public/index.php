@@ -24,7 +24,7 @@ if(!isset($page)) {
 	$page = include 'view/pages/404.php';
 }
 
-// $layout = str_replace('{{ title in layout }}', $page['title'], $layout);
-// $layout = str_replace('{{ content in layout }}', $page['content'], $layout);
+$layout = str_replace('{{ title in layout }}', $page['title'], $layout);
+$layout = str_replace('{{ content in layout }}', $page['content'], $layout);
 echo $layout;
 ?>
