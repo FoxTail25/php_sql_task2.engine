@@ -5,11 +5,11 @@
 	$query = "SELECT pages.title, pages.content 
 		FROM pages
 	LEFT JOIN
-		category ON category.id=pages.category_id
+		categories ON categories.id=pages.category_id
 	WHERE
-		pages.slug='$pageSlug' AND category.slug='$catSlug'";
+		pages.slug='$pageSlug' AND categories.slug='$catSlug'";
 	
-	$res = mysqli_query($link, $query) or die(mysqli_error($link));
+	$res = mysqli_query($site_base_link, $query) or die(mysqli_error($link));
 	$page = mysqli_fetch_assoc($res);
 	
 	return $page;
