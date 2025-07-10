@@ -1,13 +1,14 @@
 <?php
 	$catSlug = $params['catSlug'];
 	
+	
 	$query = "SELECT pages.slug, pages.title FROM pages
 	LEFT JOIN
-		category ON category.id=pages.category_id
+		categories ON categories.id=pages.category_id
 	WHERE
-		category.slug='$catSlug'";
+		categories.slug='$catSlug'";
 	
-	$res = mysqli_query($link, $query) or die(mysqli_error($link));
+	$res = mysqli_query($site_base_link, $query) or die(mysqli_error($link));
 	
 	for ($data = []; $row = mysqli_fetch_assoc($res); $data[] = 
 		$row); 
