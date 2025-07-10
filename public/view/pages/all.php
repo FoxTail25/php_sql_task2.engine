@@ -1,5 +1,7 @@
 <?php
-
-$page = ['title' => 'home title', 'content' => 'home content'];
+$content = "<div>
+<a/ href=\"page/category\">category</a>
+</div>";
+$page = ['title' => 'home title', 'content' => $content];
 return $page;
 ?>
