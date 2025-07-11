@@ -9,14 +9,14 @@ $layout = str_replace('{{ footer in  layout }}', $footer, $layout);
 
 
 
-	$route = '^/page/(?<catSlug>[a-z0-9_-]+)/(?<pageSlug>[a-z0-9_-]+)$';
+	$route = '^/page/(?<catSlug>[a-zA-Z0-9_-]+)/(?<pageSlug>[a-zA-Z0-9_-]+)$';
 	if (preg_match("#$route#", $url, $params)) {
-		$page = include 'view/pages/show.php';
+		$page = include 'view/pages/cities.php';
 	}
 	
-	$route = '^/page/(?<catSlug>[a-z0-9_-]+)$';
+	$route = '^/page/(?<catSlug>[a-zA-Z0-9_-]+)$';
 	if (preg_match("#$route#", $url, $params)) {
-		$page = include 'view/pages/category.php';
+		$page = include 'view/pages/countries.php';
 	}
 	
 	$route = '^/$';

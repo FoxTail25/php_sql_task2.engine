@@ -2,11 +2,11 @@
 	$catSlug = $params['catSlug'];
 	
 	
-	$query = "SELECT pages.slug, pages.title FROM pages
+	$query = "SELECT cities.slug, cities.title FROM cities
 	LEFT JOIN
-		categories ON categories.id=pages.category_id
+		countries ON countries.id=cities.country_id
 	WHERE
-		categories.slug='$catSlug'";
+		countries.slug='$catSlug'";
 	
 	$res = mysqli_query($site_base_link, $query) or die(mysqli_error($link));
 	
