@@ -10,12 +10,12 @@
 	
 	$res = mysqli_query($site_base_link, $query) or die(mysqli_error($link));
 	
-	for ($data = []; $row = mysqli_fetch_assoc($res); $data[] = 
-		$row); 
+	for ($data = []; $row = mysqli_fetch_assoc($res); $data[] = $row); 
 	
-	$content = '';
+	$content = "<h4>$params[catSlug]</h4>";
 	foreach ($data as $page) {
 		$content .= '
+		
 			<div>
 				<a href="/page/' . $catSlug . '/'  . $page['slug'] . '">' . $page['title'] . '</a>
 			</div>
